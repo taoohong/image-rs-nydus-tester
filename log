@@ -1,0 +1,213 @@
+   Compiling image-rs v0.1.0 (/root/Programs/image-rs/image-rs)
+warning: the item `info` is imported redundantly
+   --> /root/Programs/image-rs/image-rs/src/image.rs:372:13
+    |
+6   | use log::{warn, info};
+    |                 ---- the item `info` is already imported here
+...
+372 |         use log::info;
+    |             ^^^^^^^^^
+    |
+    = note: `#[warn(unused_imports)]` on by default
+
+warning: `image-rs` (lib) generated 1 warning
+   Compiling nydus-test v0.1.0 (/root/Programs/nydus-test)
+warning: function `test_diff` is never used
+  --> src/main.rs:35:10
+   |
+35 | async fn test_diff() -> Result<()>{
+   |          ^^^^^^^^^
+   |
+   = note: `#[warn(dead_code)]` on by default
+
+warning: function `image_pull` is never used
+  --> src/image.rs:17:14
+   |
+17 | pub async fn image_pull(image: &str, cid: &str) -> Result<String> {
+   |              ^^^^^^^^^^
+
+warning: unused `Result` that must be used
+  --> src/main.rs:11:5
+   |
+11 |     single_test().await;
+   |     ^^^^^^^^^^^^^^^^^^^
+   |
+   = note: this `Result` may be an `Err` variant, which should be handled
+   = note: `#[warn(unused_must_use)]` on by default
+
+warning: `nydus-test` (bin "nydus-test") generated 3 warnings
+    Finished dev [unoptimized + debuginfo] target(s) in 11.78s
+     Running `target/debug/nydus-test`
+[2023-06-29T03:25:36Z INFO  nydus_test] pulling nydus image taoohong/alpine:nydus-encrypted
+[2023-06-29T03:25:36Z INFO  nydus_test::image] generated cid alpine_nydus-encrypted
+[2023-06-29T03:25:36Z INFO  nydus_test::image] pull image "taoohong/alpine:nydus-encrypted", cid: "alpine_nydus-encrypted", bundle path "/var/container_base/alpine_nydus-encrypted"
+/usr/local/bin/attestation-agent: error while loading shared libraries: libtdx_attest.so.1: cannot open shared object file: No such file or directory
+[2023-06-29T03:25:37Z DEBUG oci_distribution::token_cache] Fetching token registry=registry-1.docker.io repository=taoohong/alpine op=Pull miss=true
+[2023-06-29T03:25:37Z DEBUG oci_distribution::client] Authorizing for image: Reference { registry: "docker.io", repository: "taoohong/alpine", tag: Some("nydus-encrypted"), digest: None }
+[2023-06-29T03:25:37Z DEBUG oci_distribution::client] url="https://registry-1.docker.io/v2/"
+[2023-06-29T03:25:37Z DEBUG reqwest::connect] starting new connection: https://registry-1.docker.io/
+[2023-06-29T03:25:37Z DEBUG hyper::client::connect::dns] resolving host="registry-1.docker.io"
+[2023-06-29T03:25:37Z DEBUG hyper::client::connect::http] connecting to 3.216.34.172:443
+[2023-06-29T03:25:37Z DEBUG hyper::client::connect::http] connected to 3.216.34.172:443
+[2023-06-29T03:25:37Z DEBUG hyper::proto::h1::io] flushed 62 bytes
+[2023-06-29T03:25:38Z DEBUG hyper::proto::h1::io] parsed 6 headers
+[2023-06-29T03:25:38Z DEBUG hyper::proto::h1::conn] incoming body is content-length (87 bytes)
+[2023-06-29T03:25:38Z DEBUG hyper::proto::h1::conn] incoming body completed
+[2023-06-29T03:25:38Z DEBUG hyper::client::pool] pooling idle connection for ("https", registry-1.docker.io)
+[2023-06-29T03:25:38Z DEBUG oci_distribution::client] Making authentication call realm="https://auth.docker.io/token" service=Some("registry.docker.io") scope="repository:taoohong/alpine:pull"
+[2023-06-29T03:25:38Z DEBUG reqwest::connect] starting new connection: https://auth.docker.io/
+[2023-06-29T03:25:38Z DEBUG hyper::client::connect::dns] resolving host="auth.docker.io"
+[2023-06-29T03:25:38Z DEBUG hyper::client::connect::http] connecting to 34.205.13.154:443
+[2023-06-29T03:25:38Z DEBUG hyper::client::connect::http] connected to 34.205.13.154:443
+[2023-06-29T03:25:38Z DEBUG hyper::proto::h1::io] flushed 129 bytes
+[2023-06-29T03:25:39Z DEBUG hyper::proto::h1::io] parsed 5 headers
+[2023-06-29T03:25:39Z DEBUG hyper::proto::h1::conn] incoming body is chunked encoding
+[2023-06-29T03:25:39Z DEBUG hyper::proto::h1::decode] incoming chunked header: 0xF49 (3913 bytes)
+[2023-06-29T03:25:39Z DEBUG hyper::proto::h1::decode] incoming chunked header: 0x1E6 (486 bytes)
+[2023-06-29T03:25:39Z DEBUG hyper::proto::h1::conn] incoming body completed
+[2023-06-29T03:25:39Z DEBUG hyper::client::pool] pooling idle connection for ("https", auth.docker.io)
+[2023-06-29T03:25:39Z DEBUG oci_distribution::client] Received response from auth request: {"token":"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsIng1YyI6WyJNSUlDK1RDQ0FwK2dBd0lCQWdJQkFEQUtCZ2dxaGtqT1BRUURBakJHTVVRd1FnWURWUVFERXp0U1RVbEdPbEZNUmpRNlEwZFFNenBSTWtWYU9sRklSRUk2VkVkRlZUcFZTRlZNT2taTVZqUTZSMGRXV2pwQk5WUkhPbFJMTkZNNlVVeElTVEFlRncweU16QXhNRFl3TkRJM05EUmFGdzB5TkRBeE1qWXdOREkzTkRSYU1FWXhSREJDQmdOVkJBTVRPME5EVlVZNlNqVkhOanBGUTFORU9rTldSRWM2VkRkTU1qcEtXa1pST2xOTk0wUTZXRmxQTkRwV04wTkhPa2RHVjBJNldsbzFOam8wVlVSRE1JSUJJakFOQmdrcWhraUc5dzBCQVFFRkFBT0NBUThBTUlJQkNnS0NBUUVBek4wYjBqN1V5L2FzallYV2gyZzNxbzZKaE9rQWpYV0FVQmNzSHU2aFlaUkZMOXZlODEzVEI0Y2w4UWt4Q0k0Y1VnR0duR1dYVnhIMnU1dkV0eFNPcVdCcnhTTnJoU01qL1ZPKzYvaVkrOG1GRmEwR2J5czF3VDVjNlY5cWROaERiVGNwQXVYSjFSNGJLdSt1VGpVS0VIYXlqSFI5TFBEeUdnUC9ubUFadk5PWEdtclNTSkZJNnhFNmY3QS8rOVptcWgyVlRaQlc0cXduSnF0cnNJM2NveDNQczMwS2MrYUh3V3VZdk5RdFNBdytqVXhDVVFoRWZGa0lKSzh6OVdsL1FjdE9EcEdUeXNtVHBjNzZaVEdKWWtnaGhGTFJEMmJQTlFEOEU1ZWdKa2RQOXhpaW5sVGx3MjBxWlhVRmlqdWFBcndOR0xJbUJEWE0wWlI1YzVtU3Z3SURBUUFCbzRHeU1JR3ZNQTRHQTFVZER3RUIvd1FFQXdJSGdEQVBCZ05WSFNVRUNEQUdCZ1JWSFNVQU1FUUdBMVVkRGdROUJEdERRMVZHT2tvMVJ6WTZSVU5UUkRwRFZrUkhPbFEzVERJNlNscEdVVHBUVFRORU9saFpUelE2VmpkRFJ6cEhSbGRDT2xwYU5UWTZORlZFUXpCR0JnTlZIU01FUHpBOWdEdFNUVWxHT2xGTVJqUTZRMGRRTXpwUk1rVmFPbEZJUkVJNlZFZEZWVHBWU0ZWTU9rWk1WalE2UjBkV1dqcEJOVlJIT2xSTE5GTTZVVXhJU1RBS0JnZ3Foa2pPUFFRREFnTklBREJGQWlFQW1RNHhsQXZXVlArTy9hNlhDU05pYUFYRU1Bb1RQVFRYRWJYMks2RVU4ZTBDSUg0QTAwSVhtUndjdGtEOHlYNzdkTVoyK0pEY1FGdDFxRktMZFR5SnVzT1UiXX0.eyJhY2Nlc3MiOlt7InR5cGUiOiJyZXBvc2l0b3J5IiwibmFtZSI6InRhb29ob25nL2FscGluZSIsImFjdGlvbnMiOlsicHVsbCJdLCJwYXJhbWV0ZXJzIjp7InB1bGxfbGltaXQiOiIxMDAiLCJwdWxsX2xpbWl0X2ludGVydmFsIjoiMjE2MDAifX1dLCJhdWQiOiJyZWdpc3RyeS5kb2NrZXIuaW8iLCJleHAiOjE2ODgwMDk0MzksImlhdCI6MTY4ODAwOTEzOSwiaXNzIjoiYXV0aC5kb2NrZXIuaW8iLCJqdGkiOiJkY2tyX2p0aV9xMXJIN252ZUI0bEtJU3F3el9vbzlrT3pfcjg9IiwibmJmIjoxNjg4MDA4ODM5LCJzdWIiOiIifQ.Qo9CnNTwXyFKCk5Xvcn9tIaWwESKCN126jcxnjOWbB0eMPy8SFRMf9LVwyiaQPnyGg1lWsvR4s8nDFGTNgLkQOpBo2tPM5rz4UbKKtPB95nOJt55_Q2UJ0-zcBQNjUgRST1cqSe66SQOpSSP-4TvLaEynDFPHuAIj40XZOcMJEcX8BydNjB_kxo7U4aHZZ3aauU0eEOFRFn0tViR12CWssmbAvS4r6SvsOF38pudt9vMraJEe05dXHpNtE5yJ-1q7zdiz6Bq9EvO6wtvXdVdOeBmlY17Ux5efVWqE1_DcB2kpPYlo2FwCFCmqTI2KDuXWu5hIJOgFef1U8akKf9Hpg","access_token":"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsIng1YyI6WyJNSUlDK1RDQ0FwK2dBd0lCQWdJQkFEQUtCZ2dxaGtqT1BRUURBakJHTVVRd1FnWURWUVFERXp0U1RVbEdPbEZNUmpRNlEwZFFNenBSTWtWYU9sRklSRUk2VkVkRlZUcFZTRlZNT2taTVZqUTZSMGRXV2pwQk5WUkhPbFJMTkZNNlVVeElTVEFlRncweU16QXhNRFl3TkRJM05EUmFGdzB5TkRBeE1qWXdOREkzTkRSYU1FWXhSREJDQmdOVkJBTVRPME5EVlVZNlNqVkhOanBGUTFORU9rTldSRWM2VkRkTU1qcEtXa1pST2xOTk0wUTZXRmxQTkRwV04wTkhPa2RHVjBJNldsbzFOam8wVlVSRE1JSUJJakFOQmdrcWhraUc5dzBCQVFFRkFBT0NBUThBTUlJQkNnS0NBUUVBek4wYjBqN1V5L2FzallYV2gyZzNxbzZKaE9rQWpYV0FVQmNzSHU2aFlaUkZMOXZlODEzVEI0Y2w4UWt4Q0k0Y1VnR0duR1dYVnhIMnU1dkV0eFNPcVdCcnhTTnJoU01qL1ZPKzYvaVkrOG1GRmEwR2J5czF3VDVjNlY5cWROaERiVGNwQXVYSjFSNGJLdSt1VGpVS0VIYXlqSFI5TFBEeUdnUC9ubUFadk5PWEdtclNTSkZJNnhFNmY3QS8rOVptcWgyVlRaQlc0cXduSnF0cnNJM2NveDNQczMwS2MrYUh3V3VZdk5RdFNBdytqVXhDVVFoRWZGa0lKSzh6OVdsL1FjdE9EcEdUeXNtVHBjNzZaVEdKWWtnaGhGTFJEMmJQTlFEOEU1ZWdKa2RQOXhpaW5sVGx3MjBxWlhVRmlqdWFBcndOR0xJbUJEWE0wWlI1YzVtU3Z3SURBUUFCbzRHeU1JR3ZNQTRHQTFVZER3RUIvd1FFQXdJSGdEQVBCZ05WSFNVRUNEQUdCZ1JWSFNVQU1FUUdBMVVkRGdROUJEdERRMVZHT2tvMVJ6WTZSVU5UUkRwRFZrUkhPbFEzVERJNlNscEdVVHBUVFRORU9saFpUelE2VmpkRFJ6cEhSbGRDT2xwYU5UWTZORlZFUXpCR0JnTlZIU01FUHpBOWdEdFNUVWxHT2xGTVJqUTZRMGRRTXpwUk1rVmFPbEZJUkVJNlZFZEZWVHBWU0ZWTU9rWk1WalE2UjBkV1dqcEJOVlJIT2xSTE5GTTZVVXhJU1RBS0JnZ3Foa2pPUFFRREFnTklBREJGQWlFQW1RNHhsQXZXVlArTy9hNlhDU05pYUFYRU1Bb1RQVFRYRWJYMks2RVU4ZTBDSUg0QTAwSVhtUndjdGtEOHlYNzdkTVoyK0pEY1FGdDFxRktMZFR5SnVzT1UiXX0.eyJhY2Nlc3MiOlt7InR5cGUiOiJyZXBvc2l0b3J5IiwibmFtZSI6InRhb29ob25nL2FscGluZSIsImFjdGlvbnMiOlsicHVsbCJdLCJwYXJhbWV0ZXJzIjp7InB1bGxfbGltaXQiOiIxMDAiLCJwdWxsX2xpbWl0X2ludGVydmFsIjoiMjE2MDAifX1dLCJhdWQiOiJyZWdpc3RyeS5kb2NrZXIuaW8iLCJleHAiOjE2ODgwMDk0MzksImlhdCI6MTY4ODAwOTEzOSwiaXNzIjoiYXV0aC5kb2NrZXIuaW8iLCJqdGkiOiJkY2tyX2p0aV9xMXJIN252ZUI0bEtJU3F3el9vbzlrT3pfcjg9IiwibmJmIjoxNjg4MDA4ODM5LCJzdWIiOiIifQ.Qo9CnNTwXyFKCk5Xvcn9tIaWwESKCN126jcxnjOWbB0eMPy8SFRMf9LVwyiaQPnyGg1lWsvR4s8nDFGTNgLkQOpBo2tPM5rz4UbKKtPB95nOJt55_Q2UJ0-zcBQNjUgRST1cqSe66SQOpSSP-4TvLaEynDFPHuAIj40XZOcMJEcX8BydNjB_kxo7U4aHZZ3aauU0eEOFRFn0tViR12CWssmbAvS4r6SvsOF38pudt9vMraJEe05dXHpNtE5yJ-1q7zdiz6Bq9EvO6wtvXdVdOeBmlY17Ux5efVWqE1_DcB2kpPYlo2FwCFCmqTI2KDuXWu5hIJOgFef1U8akKf9Hpg","expires_in":300,"issued_at":"2023-06-29T03:25:39.073170403Z"}
+    
+[2023-06-29T03:25:39Z DEBUG oci_distribution::client] Successfully authorized for image 'Reference { registry: "docker.io", repository: "taoohong/alpine", tag: Some("nydus-encrypted"), digest: None }'
+[2023-06-29T03:25:39Z DEBUG oci_distribution::token_cache] Inserting token registry=registry-1.docker.io repository=taoohong/alpine op=Pull expiration=1688009439
+[2023-06-29T03:25:39Z DEBUG oci_distribution::client] Pulling image manifest from https://registry-1.docker.io/v2/taoohong/alpine/manifests/nydus-encrypted
+[2023-06-29T03:25:39Z DEBUG oci_distribution::token_cache] Fetching token registry=registry-1.docker.io repository=taoohong/alpine op=Pull expiration=1688009439 miss=false expired=false
+[2023-06-29T03:25:39Z DEBUG oci_distribution::client] Using bearer token authentication.
+[2023-06-29T03:25:39Z DEBUG hyper::client::pool] reuse idle connection for ("https", registry-1.docker.io)
+[2023-06-29T03:25:39Z DEBUG hyper::proto::h1::io] flushed 2473 bytes
+[2023-06-29T03:25:39Z DEBUG hyper::proto::h1::io] parsed 10 headers
+[2023-06-29T03:25:39Z DEBUG hyper::proto::h1::conn] incoming body is content-length (2460 bytes)
+[2023-06-29T03:25:39Z DEBUG hyper::proto::h1::conn] incoming body completed
+[2023-06-29T03:25:39Z DEBUG hyper::client::pool] pooling idle connection for ("https", registry-1.docker.io)
+[2023-06-29T03:25:39Z DEBUG oci_distribution::client] validating manifest: {
+      "schemaVersion": 2,
+      "mediaType": "application/vnd.docker.distribution.manifest.v2+json",
+      "config": {
+        "mediaType": "application/vnd.docker.container.image.v1+json",
+        "digest": "sha256:4ff75f203b37a60648646e8f1d06de958835b10df24e57ab349c6b7c03c6edfd",
+        "size": 726
+      },
+      "layers": [
+        {
+          "mediaType": "application/vnd.oci.image.layer.nydus.blob.v1",
+          "digest": "sha256:1408bf6a3811f484a2f8aad14660e6d2e34078887105f4823be41bb94fc1435a",
+          "size": 3441245,
+          "annotations": {
+            "containerd.io/snapshot/nydus-blob": "true",
+            "containerd.io/snapshot/nydus-encrypted-blob": "true"
+          }
+        },
+        {
+          "mediaType": "application/vnd.oci.image.layer.v1.tar+gzip+encrypted",
+          "digest": "sha256:88eb38ed52d0fb9195c94d019c4414784aba21e0b9cc89e27f5273f13c1daa0b",
+          "size": 14727,
+          "annotations": {
+            "containerd.io/snapshot/nydus-bootstrap": "true",
+            "containerd.io/snapshot/nydus-fs-version": "6",
+            "org.opencontainers.image.enc.keys.provider.attestation-agent": "eyJraWQiOiJrYnM6Ly8vZGVmYXVsdC9pbWFnZS1rZWsvOGE3ZDQ3ZmItZDgxNy00ZWJjLTg3ZTAtNDU2YzYwMTRhMzBhIiwid3JhcHBlZF9kYXRhIjoickF0THVkY1BtV0hWS1ZrQzBuR2JNTi9zWGdzSk5zeno4dVhwNkZoTk1XaDhqanZtdGV2L1RiQXkvMTdvckZCZmI2a3M0V1dMTGN6Z3M4Vll0ZTVYQTVZYktVZVlGaWM2NlArZU1UL1hLVytKclRhSHZvTXZFdENrNjhVV3pjS0FRajNMMk9pb2IwTHF4MEFMbkdIb1NuT2VxQXJvZGszdm9ZVkIzOU8xbHY5MmVKbmhzWk1WV3kwdzlwOFhhV3lCaGJsdXl3R2JsaWFtNXBMY2JBZEpCZEZaT1IyNWtqaVhOYjlaSDZVd01QWkUreStOTEtaaFovU2ZZNHdHR3B3clNMZW1JaXVtMHpYK0FkRUdSdHBmUlY4PSIsIml2IjoiaHpLWmVrUVR5aEpCU3cyTCIsIndyYXBfdHlwZSI6IkEyNTZHQ00ifQ==",
+            "org.opencontainers.image.enc.pubopts": "eyJjaXBoZXIiOiJBRVNfMjU2X0NUUl9ITUFDX1NIQTI1NiIsImhtYWMiOiJmTC9xekpSUDI5dmFzY3BTZlRaMHV1NUcxK1R1YjFGb0sxWWFjNDNNWGNvPSIsImNpcGhlcm9wdGlvbnMiOnt9fQ=="
+          }
+        }
+      ],
+      "subject": {
+        "mediaType": "application/vnd.docker.distribution.manifest.v2+json",
+        "digest": "sha256:25fad2a32ad1f6f510e528448ae1ec69a28ef81916a004d3629874104f8a7f70",
+        "size": 528,
+        "platform": {
+          "architecture": "amd64",
+          "os": "linux"
+        }
+      },
+      "annotations": {
+        "containerd.io/snapshot/nydus-builder-version": "v2.2.0-259-g5b3f9139",
+        "containerd.io/snapshot/nydus-fs-version": "6",
+        "containerd.io/snapshot/nydus-source-digest": "sha256:82d1e9d7ed48a7523bdebc18cf6290bdb97b82302a8a9c27d4fe885949ea94d1",
+        "containerd.io/snapshot/nydus-source-reference": "docker.io/library/alpine:latest"
+      }
+    }
+[2023-06-29T03:25:39Z DEBUG oci_distribution::client] Parsing response as Manifest: {
+      "schemaVersion": 2,
+      "mediaType": "application/vnd.docker.distribution.manifest.v2+json",
+      "config": {
+        "mediaType": "application/vnd.docker.container.image.v1+json",
+        "digest": "sha256:4ff75f203b37a60648646e8f1d06de958835b10df24e57ab349c6b7c03c6edfd",
+        "size": 726
+      },
+      "layers": [
+        {
+          "mediaType": "application/vnd.oci.image.layer.nydus.blob.v1",
+          "digest": "sha256:1408bf6a3811f484a2f8aad14660e6d2e34078887105f4823be41bb94fc1435a",
+          "size": 3441245,
+          "annotations": {
+            "containerd.io/snapshot/nydus-blob": "true",
+            "containerd.io/snapshot/nydus-encrypted-blob": "true"
+          }
+        },
+        {
+          "mediaType": "application/vnd.oci.image.layer.v1.tar+gzip+encrypted",
+          "digest": "sha256:88eb38ed52d0fb9195c94d019c4414784aba21e0b9cc89e27f5273f13c1daa0b",
+          "size": 14727,
+          "annotations": {
+            "containerd.io/snapshot/nydus-bootstrap": "true",
+            "containerd.io/snapshot/nydus-fs-version": "6",
+            "org.opencontainers.image.enc.keys.provider.attestation-agent": "eyJraWQiOiJrYnM6Ly8vZGVmYXVsdC9pbWFnZS1rZWsvOGE3ZDQ3ZmItZDgxNy00ZWJjLTg3ZTAtNDU2YzYwMTRhMzBhIiwid3JhcHBlZF9kYXRhIjoickF0THVkY1BtV0hWS1ZrQzBuR2JNTi9zWGdzSk5zeno4dVhwNkZoTk1XaDhqanZtdGV2L1RiQXkvMTdvckZCZmI2a3M0V1dMTGN6Z3M4Vll0ZTVYQTVZYktVZVlGaWM2NlArZU1UL1hLVytKclRhSHZvTXZFdENrNjhVV3pjS0FRajNMMk9pb2IwTHF4MEFMbkdIb1NuT2VxQXJvZGszdm9ZVkIzOU8xbHY5MmVKbmhzWk1WV3kwdzlwOFhhV3lCaGJsdXl3R2JsaWFtNXBMY2JBZEpCZEZaT1IyNWtqaVhOYjlaSDZVd01QWkUreStOTEtaaFovU2ZZNHdHR3B3clNMZW1JaXVtMHpYK0FkRUdSdHBmUlY4PSIsIml2IjoiaHpLWmVrUVR5aEpCU3cyTCIsIndyYXBfdHlwZSI6IkEyNTZHQ00ifQ==",
+            "org.opencontainers.image.enc.pubopts": "eyJjaXBoZXIiOiJBRVNfMjU2X0NUUl9ITUFDX1NIQTI1NiIsImhtYWMiOiJmTC9xekpSUDI5dmFzY3BTZlRaMHV1NUcxK1R1YjFGb0sxWWFjNDNNWGNvPSIsImNpcGhlcm9wdGlvbnMiOnt9fQ=="
+          }
+        }
+      ],
+      "subject": {
+        "mediaType": "application/vnd.docker.distribution.manifest.v2+json",
+        "digest": "sha256:25fad2a32ad1f6f510e528448ae1ec69a28ef81916a004d3629874104f8a7f70",
+        "size": 528,
+        "platform": {
+          "architecture": "amd64",
+          "os": "linux"
+        }
+      },
+      "annotations": {
+        "containerd.io/snapshot/nydus-builder-version": "v2.2.0-259-g5b3f9139",
+        "containerd.io/snapshot/nydus-fs-version": "6",
+        "containerd.io/snapshot/nydus-source-digest": "sha256:82d1e9d7ed48a7523bdebc18cf6290bdb97b82302a8a9c27d4fe885949ea94d1",
+        "containerd.io/snapshot/nydus-source-reference": "docker.io/library/alpine:latest"
+      }
+    }
+[2023-06-29T03:25:39Z DEBUG oci_distribution::client] Pulling config layer
+[2023-06-29T03:25:39Z DEBUG oci_distribution::token_cache] Fetching token registry=registry-1.docker.io repository=taoohong/alpine op=Pull expiration=1688009439 miss=false expired=false
+[2023-06-29T03:25:39Z DEBUG oci_distribution::client] Using bearer token authentication.
+[2023-06-29T03:25:39Z DEBUG hyper::client::pool] reuse idle connection for ("https", registry-1.docker.io)
+[2023-06-29T03:25:39Z DEBUG hyper::proto::h1::io] flushed 2525 bytes
+[2023-06-29T03:25:39Z DEBUG hyper::proto::h1::io] parsed 6 headers
+[2023-06-29T03:25:39Z DEBUG hyper::proto::h1::conn] incoming body is empty
+[2023-06-29T03:25:39Z DEBUG hyper::client::pool] pooling idle connection for ("https", registry-1.docker.io)
+[2023-06-29T03:25:39Z DEBUG reqwest::async_impl::client] redirecting 'https://registry-1.docker.io/v2/taoohong/alpine/blobs/sha256:4ff75f203b37a60648646e8f1d06de958835b10df24e57ab349c6b7c03c6edfd' to 'https://production.cloudflare.docker.com/registry-v2/docker/registry/v2/blobs/sha256/4f/4ff75f203b37a60648646e8f1d06de958835b10df24e57ab349c6b7c03c6edfd/data?verify=1688012139-CXrpVtznn2UfbU1jonlP9zM5vRs%3D'
+[2023-06-29T03:25:39Z DEBUG reqwest::connect] starting new connection: https://production.cloudflare.docker.com/
+[2023-06-29T03:25:39Z DEBUG hyper::client::connect::dns] resolving host="production.cloudflare.docker.com"
+[2023-06-29T03:25:39Z DEBUG hyper::client::connect::http] connecting to 104.18.122.25:443
+[2023-06-29T03:25:39Z DEBUG hyper::client::connect::http] connected to 104.18.122.25:443
+[2023-06-29T03:25:40Z DEBUG hyper::proto::h1::io] flushed 565 bytes
+[2023-06-29T03:25:40Z DEBUG hyper::proto::h1::io] parsed 17 headers
+[2023-06-29T03:25:40Z DEBUG hyper::proto::h1::conn] incoming body is content-length (726 bytes)
+[2023-06-29T03:25:40Z DEBUG hyper::proto::h1::conn] incoming body completed
+[2023-06-29T03:25:40Z DEBUG hyper::client::pool] pooling idle connection for ("https", production.cloudflare.docker.com)
+[2023-06-29T03:25:40Z INFO  image_rs::image] the config: {"created":"2023-06-14T20:41:59.079795125Z","architecture":"amd64","os":"linux","config":{"Env":["PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"],"Cmd":["/bin/sh"]},"rootfs":{"type":"layers","diff_ids":["sha256:1408bf6a3811f484a2f8aad14660e6d2e34078887105f4823be41bb94fc1435a","sha256:b2797210727c14e601582b56c8c1ee9fa9dca7f6083fa64b349e679e10fe01b5"]},"history":[{"created":"2023-06-14T20:41:58.950178204Z","created_by":"/bin/sh -c #(nop) ADD file:1da756d12551a0e3e793e02ef87432d69d4968937bd11bed0af215db19dd94cd in / "},{"created":"2023-06-14T20:41:59.079795125Z","created_by":"/bin/sh -c #(nop)  CMD [\"/bin/sh\"]","empty_layer":true},{"created_by":"Nydus Converter","comment":"Nydus Bootstrap Layer"}]}
+[2023-06-29T03:25:40Z INFO  image_rs::image] the bootstrap info ( media-type: 'application/vnd.oci.image.layer.v1.tar+gzip+encrypted', digest: 'sha256:88eb38ed52d0fb9195c94d019c4414784aba21e0b9cc89e27f5273f13c1daa0b', size: '14727', urls: '[]', annotations: '{"containerd.io/snapshot/nydus-fs-version": "6", "org.opencontainers.image.enc.pubopts": "eyJjaXBoZXIiOiJBRVNfMjU2X0NUUl9ITUFDX1NIQTI1NiIsImhtYWMiOiJmTC9xekpSUDI5dmFzY3BTZlRaMHV1NUcxK1R1YjFGb0sxWWFjNDNNWGNvPSIsImNpcGhlcm9wdGlvbnMiOnt9fQ==", "org.opencontainers.image.enc.keys.provider.attestation-agent": "eyJraWQiOiJrYnM6Ly8vZGVmYXVsdC9pbWFnZS1rZWsvOGE3ZDQ3ZmItZDgxNy00ZWJjLTg3ZTAtNDU2YzYwMTRhMzBhIiwid3JhcHBlZF9kYXRhIjoickF0THVkY1BtV0hWS1ZrQzBuR2JNTi9zWGdzSk5zeno4dVhwNkZoTk1XaDhqanZtdGV2L1RiQXkvMTdvckZCZmI2a3M0V1dMTGN6Z3M4Vll0ZTVYQTVZYktVZVlGaWM2NlArZU1UL1hLVytKclRhSHZvTXZFdENrNjhVV3pjS0FRajNMMk9pb2IwTHF4MEFMbkdIb1NuT2VxQXJvZGszdm9ZVkIzOU8xbHY5MmVKbmhzWk1WV3kwdzlwOFhhV3lCaGJsdXl3R2JsaWFtNXBMY2JBZEpCZEZaT1IyNWtqaVhOYjlaSDZVd01QWkUreStOTEtaaFovU2ZZNHdHR3B3clNMZW1JaXVtMHpYK0FkRUdSdHBmUlY4PSIsIml2IjoiaHpLWmVrUVR5aEpCU3cyTCIsIndyYXBfdHlwZSI6IkEyNTZHQ00ifQ==", "containerd.io/snapshot/nydus-bootstrap": "true"}' )
+[2023-06-29T03:25:40Z INFO  image_rs::image] the bootstrap diff id sha256:b2797210727c14e601582b56c8c1ee9fa9dca7f6083fa64b349e679e10fe01b5
+[2023-06-29T03:25:40Z INFO  image_rs::pull] blob handle successfully,
+[2023-06-29T03:25:40Z DEBUG oci_distribution::token_cache] Fetching token registry=registry-1.docker.io repository=taoohong/alpine op=Pull expiration=1688009439 miss=false expired=false
+[2023-06-29T03:25:40Z DEBUG oci_distribution::client] Using bearer token authentication.
+[2023-06-29T03:25:40Z DEBUG hyper::client::pool] reuse idle connection for ("https", registry-1.docker.io)
+[2023-06-29T03:25:40Z DEBUG hyper::proto::h1::io] flushed 2525 bytes
+[2023-06-29T03:25:40Z DEBUG hyper::proto::h1::io] parsed 6 headers
+[2023-06-29T03:25:40Z DEBUG hyper::proto::h1::conn] incoming body is empty
+[2023-06-29T03:25:40Z DEBUG hyper::client::pool] pooling idle connection for ("https", registry-1.docker.io)
+[2023-06-29T03:25:40Z DEBUG reqwest::async_impl::client] redirecting 'https://registry-1.docker.io/v2/taoohong/alpine/blobs/sha256:88eb38ed52d0fb9195c94d019c4414784aba21e0b9cc89e27f5273f13c1daa0b' to 'https://production.cloudflare.docker.com/registry-v2/docker/registry/v2/blobs/sha256/88/88eb38ed52d0fb9195c94d019c4414784aba21e0b9cc89e27f5273f13c1daa0b/data?verify=1688012140-L%2FYrNgJCGroclexTpvqCZP2zPWM%3D'
+[2023-06-29T03:25:40Z DEBUG hyper::client::pool] reuse idle connection for ("https", production.cloudflare.docker.com)
+[2023-06-29T03:25:40Z DEBUG hyper::proto::h1::io] flushed 567 bytes
+[2023-06-29T03:25:41Z DEBUG hyper::proto::h1::io] parsed 17 headers
+[2023-06-29T03:25:41Z DEBUG hyper::proto::h1::conn] incoming body is content-length (14727 bytes)
+[2023-06-29T03:25:41Z DEBUG hyper::proto::h1::conn] incoming body completed
+[2023-06-29T03:25:41Z DEBUG hyper::client::pool] pooling idle connection for ("https", production.cloudflare.docker.com)
+[2023-06-29T03:25:41Z INFO  image_rs::pull] blob sha256:88eb38ed52d0fb9195c94d019c4414784aba21e0b9cc89e27f5273f13c1daa0b pulled successfully
+[2023-06-29T03:25:41Z ERROR nydus_test::image] pull and unpack image "taoohong/alpine:nydus-encrypted", cid: "alpine_nydus-encrypted", with image-rs failed with "Failed to  download this bootstrap layer". 
+[2023-06-29T03:25:41Z ERROR nydus_test] pull nydus image taoohong/alpine:nydus-encrypted failed, Failed to  download this bootstrap layer
+[2023-06-29T03:25:41Z INFO  nydus_test] pulling nydus image taoohong/alpine:nydus-encrypted cast 4.267117595s

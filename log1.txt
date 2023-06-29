@@ -1,0 +1,246 @@
+warning: `nydus-test` (bin "nydus-test") generated 2 warnings
+    Finished dev [unoptimized + debuginfo] target(s) in 11.38s
+     Running `target/debug/nydus-test`
+[2023-06-28T14:42:47Z INFO  nydus_test] pulling nydus image eci-nydus-registry.cn-hangzhou.cr.aliyuncs.com/v6/java:latest-test_nydus
+[2023-06-28T14:42:47Z INFO  nydus_test::image] generated cid java_latest-test_nydus
+[2023-06-28T14:42:47Z INFO  nydus_test::image] pull image "eci-nydus-registry.cn-hangzhou.cr.aliyuncs.com/v6/java:latest-test_nydus", cid: "java_latest-test_nydus", bundle path "/var/container_base/java_latest-test_nydus"
+[2023-06-28T14:42:47Z DEBUG oci_distribution::token_cache] Fetching token registry=eci-nydus-registry.cn-hangzhou.cr.aliyuncs.com repository=v6/java op=Pull miss=true
+[2023-06-28T14:42:47Z DEBUG oci_distribution::client] Authorizing for image: Reference { registry: "eci-nydus-registry.cn-hangzhou.cr.aliyuncs.com", repository: "v6/java", tag: Some("latest-test_nydus"), digest: None }
+[2023-06-28T14:42:47Z DEBUG oci_distribution::client] url="https://eci-nydus-registry.cn-hangzhou.cr.aliyuncs.com/v2/"
+[2023-06-28T14:42:47Z DEBUG oci_distribution::client] Making authentication call realm="https://dockerauth.cn-hangzhou.aliyuncs.com/auth" service=Some("registry.aliyuncs.com:cn-hangzhou:china:cri-ii22rrbpuj8owmje") scope="repository:v6/java:pull"
+[2023-06-28T14:42:48Z DEBUG oci_distribution::client] Received response from auth request: {"access_token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6IloyWjc6N0JZSjpKMjVDOjZRTFo6V0dFRjpRNVdVOlFXREs6UjRTRzpZVVREOlY1N0o6UzJNQjozUFoyIn0.eyJpc3MiOiJkb2NrZXJhdXRoLmFsaXl1bmNzLmNvbSIsImF1ZCI6InJlZ2lzdHJ5LmFsaXl1bmNzLmNvbTpjbi1oYW5nemhvdTpjaGluYTpjcmktaWkyMnJyYnB1ajhvd21qZSIsInN1YiI6IiIsImlhdCI6MTY4Nzk2MzM2OCwianRpIjoiYlNjQk5CWXFFYVVtZTJ3MnNyVnI5USIsIm5iZiI6MTY4Nzk2MzA2OCwiZXhwIjoxNjg3OTYzOTY4LCJhY2Nlc3MiOlt7Im5hbWUiOiJ2Ni9qYXZhIiwidHlwZSI6InJlcG9zaXRvcnkiLCJhY3Rpb25zIjpbInB1bGwiXX1dfQ.XTnXE7TfvedZH9oySOvCIE1SW_oD67GupvhpLK6pSvMCFPQHNhUExBEhBFDkIUaGr3_Ing5vXznND0NRPAqV8QZ20MnfIJd5eHFxl70El-LTK4lAaWZgcRfKWaad8224MM0o8t_DCBHOqwQxfHjLzQ3ZEfHsRmk-VXbON2uYBxrMIJnhUNLRD7RcB9X54r1jUViV3LaK4pVL6qF55QQhNOMDS-wEF4XQhmXLbNFyKF2umiLOUfUANwhFVnLdurnzr-W4gv-j7fHlFx56uJWEvR9kieKYBDC-7BCnuuGb724f-d1i8v2AI9OINffBTaFtiedWPnSkWExOevplLFFmww","token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6IloyWjc6N0JZSjpKMjVDOjZRTFo6V0dFRjpRNVdVOlFXREs6UjRTRzpZVVREOlY1N0o6UzJNQjozUFoyIn0.eyJpc3MiOiJkb2NrZXJhdXRoLmFsaXl1bmNzLmNvbSIsImF1ZCI6InJlZ2lzdHJ5LmFsaXl1bmNzLmNvbTpjbi1oYW5nemhvdTpjaGluYTpjcmktaWkyMnJyYnB1ajhvd21qZSIsInN1YiI6IiIsImlhdCI6MTY4Nzk2MzM2OCwianRpIjoiYlNjQk5CWXFFYVVtZTJ3MnNyVnI5USIsIm5iZiI6MTY4Nzk2MzA2OCwiZXhwIjoxNjg3OTYzOTY4LCJhY2Nlc3MiOlt7Im5hbWUiOiJ2Ni9qYXZhIiwidHlwZSI6InJlcG9zaXRvcnkiLCJhY3Rpb25zIjpbInB1bGwiXX1dfQ.XTnXE7TfvedZH9oySOvCIE1SW_oD67GupvhpLK6pSvMCFPQHNhUExBEhBFDkIUaGr3_Ing5vXznND0NRPAqV8QZ20MnfIJd5eHFxl70El-LTK4lAaWZgcRfKWaad8224MM0o8t_DCBHOqwQxfHjLzQ3ZEfHsRmk-VXbON2uYBxrMIJnhUNLRD7RcB9X54r1jUViV3LaK4pVL6qF55QQhNOMDS-wEF4XQhmXLbNFyKF2umiLOUfUANwhFVnLdurnzr-W4gv-j7fHlFx56uJWEvR9kieKYBDC-7BCnuuGb724f-d1i8v2AI9OINffBTaFtiedWPnSkWExOevplLFFmww"}
+[2023-06-28T14:42:48Z DEBUG oci_distribution::client] Successfully authorized for image 'Reference { registry: "eci-nydus-registry.cn-hangzhou.cr.aliyuncs.com", repository: "v6/java", tag: Some("latest-test_nydus"), digest: None }'
+[2023-06-28T14:42:48Z DEBUG oci_distribution::token_cache] Inserting token registry=eci-nydus-registry.cn-hangzhou.cr.aliyuncs.com repository=v6/java op=Pull expiration=1687963968
+[2023-06-28T14:42:48Z DEBUG oci_distribution::client] Pulling image manifest from https://eci-nydus-registry.cn-hangzhou.cr.aliyuncs.com/v2/v6/java/manifests/latest-test_nydus
+[2023-06-28T14:42:48Z DEBUG oci_distribution::token_cache] Fetching token registry=eci-nydus-registry.cn-hangzhou.cr.aliyuncs.com repository=v6/java op=Pull expiration=1687963968 miss=false expired=false
+[2023-06-28T14:42:48Z DEBUG oci_distribution::client] Using bearer token authentication.
+[2023-06-28T14:42:48Z DEBUG oci_distribution::client] validating manifest: {
+       "mediaType": "application/vnd.oci.image.manifest.v1+json",
+       "schemaVersion": 2,
+       "config": {
+          "mediaType": "application/vnd.oci.image.config.v1+json",
+          "digest": "sha256:38f9e63e10bbd2226dc1fb51f407b90c69ee7e6d99ed56412882b39b3faf2da7",
+          "size": 4050
+       },
+       "layers": [
+          {
+             "mediaType": "application/vnd.oci.image.layer.nydus.blob.v1",
+             "digest": "sha256:659162891a9a8b329277525c5fd10720df3fc4b677de302bd756381a1a925181",
+             "size": 71490977,
+             "annotations": {
+                "containerd.io/snapshot/nydus-blob": "true"
+             }
+          },
+          {
+             "mediaType": "application/vnd.oci.image.layer.nydus.blob.v1",
+             "digest": "sha256:1847a2a4648cc3ff2db56b19c7d28a3841bb2d2e68b8163802d5eea62d517f45",
+             "size": 25385310,
+             "annotations": {
+                "containerd.io/snapshot/nydus-blob": "true"
+             }
+          },
+          {
+             "mediaType": "application/vnd.oci.image.layer.nydus.blob.v1",
+             "digest": "sha256:3c7c373cf0e9d32c72863f4cd71319377a60a8df402f294212652aa3b4239142",
+             "size": 62561319,
+             "annotations": {
+                "containerd.io/snapshot/nydus-blob": "true"
+             }
+          },
+          {
+             "mediaType": "application/vnd.oci.image.layer.nydus.blob.v1",
+             "digest": "sha256:d51dab2f65dfdf8c54dccf0411175fcf39c191555ab692b295ac55980780d115",
+             "size": 749952,
+             "annotations": {
+                "containerd.io/snapshot/nydus-blob": "true"
+             }
+          },
+          {
+             "mediaType": "application/vnd.oci.image.layer.nydus.blob.v1",
+             "digest": "sha256:e29eaaf85c1d7b9ca0c2a1a792811e79e5273d4196c0aec43ae845b1c4694b2a",
+             "size": 25671,
+             "annotations": {
+                "containerd.io/snapshot/nydus-blob": "true"
+             }
+          },
+          {
+             "mediaType": "application/vnd.oci.image.layer.nydus.blob.v1",
+             "digest": "sha256:a85bd3ca75118635fbde80cc392de126f40567502052d847f4ac376e83fa0d8d",
+             "size": 25690,
+             "annotations": {
+                "containerd.io/snapshot/nydus-blob": "true"
+             }
+          },
+          {
+             "mediaType": "application/vnd.oci.image.layer.nydus.blob.v1",
+             "digest": "sha256:6b99ea5ca11a447ed5c4fd55770abc45c4c476eac6d03ca38f865242ea33e210",
+             "size": 172238448,
+             "annotations": {
+                "containerd.io/snapshot/nydus-blob": "true"
+             }
+          },
+          {
+             "mediaType": "application/vnd.oci.image.layer.nydus.blob.v1",
+             "digest": "sha256:c0d76b65d4ab37bab75c351c426258cdd24adef835738e4e23902f80b369670c",
+             "size": 334181,
+             "annotations": {
+                "containerd.io/snapshot/nydus-blob": "true"
+             }
+          },
+          {
+             "mediaType": "application/vnd.oci.image.layer.v1.tar+gzip",
+             "digest": "sha256:749df08b65e6632578787fdba3b5aaf2b92b94dc8fc99cb1dd4d62f0c79e8674",
+             "size": 1354695,
+             "annotations": {
+                "containerd.io/snapshot/nydus-blob-ids": "[\"659162891a9a8b329277525c5fd10720df3fc4b677de302bd756381a1a925181\",\"1847a2a4648cc3ff2db56b19c7d28a3841bb2d2e68b8163802d5eea62d517f45\",\"3c7c373cf0e9d32c72863f4cd71319377a60a8df402f294212652aa3b4239142\",\"d51dab2f65dfdf8c54dccf0411175fcf39c191555ab692b295ac55980780d115\",\"e29eaaf85c1d7b9ca0c2a1a792811e79e5273d4196c0aec43ae845b1c4694b2a\",\"a85bd3ca75118635fbde80cc392de126f40567502052d847f4ac376e83fa0d8d\",\"6b99ea5ca11a447ed5c4fd55770abc45c4c476eac6d03ca38f865242ea33e210\",\"c0d76b65d4ab37bab75c351c426258cdd24adef835738e4e23902f80b369670c\"]",
+                "containerd.io/snapshot/nydus-bootstrap": "true",
+                "containerd.io/snapshot/nydus-fs-version": "6"
+             }
+          }
+       ]
+    }
+[2023-06-28T14:42:48Z DEBUG oci_distribution::client] Parsing response as Manifest: {
+       "mediaType": "application/vnd.oci.image.manifest.v1+json",
+       "schemaVersion": 2,
+       "config": {
+          "mediaType": "application/vnd.oci.image.config.v1+json",
+          "digest": "sha256:38f9e63e10bbd2226dc1fb51f407b90c69ee7e6d99ed56412882b39b3faf2da7",
+          "size": 4050
+       },
+       "layers": [
+          {
+             "mediaType": "application/vnd.oci.image.layer.nydus.blob.v1",
+             "digest": "sha256:659162891a9a8b329277525c5fd10720df3fc4b677de302bd756381a1a925181",
+             "size": 71490977,
+             "annotations": {
+                "containerd.io/snapshot/nydus-blob": "true"
+             }
+          },
+          {
+             "mediaType": "application/vnd.oci.image.layer.nydus.blob.v1",
+             "digest": "sha256:1847a2a4648cc3ff2db56b19c7d28a3841bb2d2e68b8163802d5eea62d517f45",
+             "size": 25385310,
+             "annotations": {
+                "containerd.io/snapshot/nydus-blob": "true"
+             }
+          },
+          {
+             "mediaType": "application/vnd.oci.image.layer.nydus.blob.v1",
+             "digest": "sha256:3c7c373cf0e9d32c72863f4cd71319377a60a8df402f294212652aa3b4239142",
+             "size": 62561319,
+             "annotations": {
+                "containerd.io/snapshot/nydus-blob": "true"
+             }
+          },
+          {
+             "mediaType": "application/vnd.oci.image.layer.nydus.blob.v1",
+             "digest": "sha256:d51dab2f65dfdf8c54dccf0411175fcf39c191555ab692b295ac55980780d115",
+             "size": 749952,
+             "annotations": {
+                "containerd.io/snapshot/nydus-blob": "true"
+             }
+          },
+          {
+             "mediaType": "application/vnd.oci.image.layer.nydus.blob.v1",
+             "digest": "sha256:e29eaaf85c1d7b9ca0c2a1a792811e79e5273d4196c0aec43ae845b1c4694b2a",
+             "size": 25671,
+             "annotations": {
+                "containerd.io/snapshot/nydus-blob": "true"
+             }
+          },
+          {
+             "mediaType": "application/vnd.oci.image.layer.nydus.blob.v1",
+             "digest": "sha256:a85bd3ca75118635fbde80cc392de126f40567502052d847f4ac376e83fa0d8d",
+             "size": 25690,
+             "annotations": {
+                "containerd.io/snapshot/nydus-blob": "true"
+             }
+          },
+          {
+             "mediaType": "application/vnd.oci.image.layer.nydus.blob.v1",
+             "digest": "sha256:6b99ea5ca11a447ed5c4fd55770abc45c4c476eac6d03ca38f865242ea33e210",
+             "size": 172238448,
+             "annotations": {
+                "containerd.io/snapshot/nydus-blob": "true"
+             }
+          },
+          {
+             "mediaType": "application/vnd.oci.image.layer.nydus.blob.v1",
+             "digest": "sha256:c0d76b65d4ab37bab75c351c426258cdd24adef835738e4e23902f80b369670c",
+             "size": 334181,
+             "annotations": {
+                "containerd.io/snapshot/nydus-blob": "true"
+             }
+          },
+          {
+             "mediaType": "application/vnd.oci.image.layer.v1.tar+gzip",
+             "digest": "sha256:749df08b65e6632578787fdba3b5aaf2b92b94dc8fc99cb1dd4d62f0c79e8674",
+             "size": 1354695,
+             "annotations": {
+                "containerd.io/snapshot/nydus-blob-ids": "[\"659162891a9a8b329277525c5fd10720df3fc4b677de302bd756381a1a925181\",\"1847a2a4648cc3ff2db56b19c7d28a3841bb2d2e68b8163802d5eea62d517f45\",\"3c7c373cf0e9d32c72863f4cd71319377a60a8df402f294212652aa3b4239142\",\"d51dab2f65dfdf8c54dccf0411175fcf39c191555ab692b295ac55980780d115\",\"e29eaaf85c1d7b9ca0c2a1a792811e79e5273d4196c0aec43ae845b1c4694b2a\",\"a85bd3ca75118635fbde80cc392de126f40567502052d847f4ac376e83fa0d8d\",\"6b99ea5ca11a447ed5c4fd55770abc45c4c476eac6d03ca38f865242ea33e210\",\"c0d76b65d4ab37bab75c351c426258cdd24adef835738e4e23902f80b369670c\"]",
+                "containerd.io/snapshot/nydus-bootstrap": "true",
+                "containerd.io/snapshot/nydus-fs-version": "6"
+             }
+          }
+       ]
+    }
+[2023-06-28T14:42:48Z DEBUG oci_distribution::client] Pulling config layer
+[2023-06-28T14:42:48Z DEBUG oci_distribution::token_cache] Fetching token registry=eci-nydus-registry.cn-hangzhou.cr.aliyuncs.com repository=v6/java op=Pull expiration=1687963968 miss=false expired=false
+[2023-06-28T14:42:48Z DEBUG oci_distribution::client] Using bearer token authentication.
+[2023-06-28T14:42:48Z DEBUG oci_distribution::token_cache] Fetching token registry=eci-nydus-registry.cn-hangzhou.cr.aliyuncs.com repository=v6/java op=Pull expiration=1687963968 miss=false expired=false
+[2023-06-28T14:42:48Z DEBUG oci_distribution::client] Using bearer token authentication.
+[2023-06-28T14:42:49Z DEBUG fuse_backend_rs::api::pseudo_fs] pseudo fs iterate "/"
+[2023-06-28T14:42:49Z INFO  nydus_rafs::metadata::md_v6] RAFS features: COMPRESSION_LZ4 | HASH_BLAKE3 | EXPLICIT_UID_GID | HAS_XATTR
+[2023-06-28T14:42:49Z INFO  nydus_storage::backend::connection] backend config: ConnectionConfig { proxy: ProxyConfig { url: "", ping_url: "", fallback: true, check_interval: 5, use_http: false }, mirrors: [], skip_verify: false, timeout: 5, connect_timeout: 5, retry_limit: 0 }
+[2023-06-28T14:42:49Z INFO  nydus_service::fs_service] RAFS filesystem imported
+[2023-06-28T14:42:49Z INFO  nydus_service::fs_service] Rafs filesystem mounted at /
+[2023-06-28T14:42:49Z INFO  fuse_backend_rs::transport::fusedev::linux_session] mount source rafs dest /var/container_base/java_latest-test_nydus/rootfs with fstype fuse opts default_permissions,allow_other,fd=52,rootmode=40000,user_id=0,group_id=0 fd 52
+[2023-06-28T14:42:49Z INFO  nydus_service::daemon] State machine(pid=1032952): from Init to Ready, input [Mount], output [None]
+[2023-06-28T14:42:49Z INFO  nydus_service::daemon] State machine(pid=1032952): from Ready to Running, input [Start], output [Some(StartService)]
+[2023-06-28T14:42:49Z INFO  nydus_service::fusedev] start fuse servers with 4 worker threads
+[2023-06-28T14:42:49Z INFO  fuse_backend_rs::api::server::sync_io] FUSE INIT major 7 minor 32
+     in_opts: ASYNC_READ | POSIX_LOCKS | ATOMIC_O_TRUNC | EXPORT_SUPPORT | BIG_WRITES | DONT_MASK | SPLICE_WRITE | SPLICE_MOVE | SPLICE_READ | FLOCK_LOCKS | HAS_IOCTL_DIR | AUTO_INVAL_DATA | DO_READDIRPLUS | READDIRPLUS_AUTO | ASYNC_DIO | WRITEBACK_CACHE | ZERO_MESSAGE_OPEN | PARALLEL_DIROPS | HANDLE_KILLPRIV | POSIX_ACL | ABORT_ERROR | MAX_PAGES | CACHE_SYMLINKS | ZERO_MESSAGE_OPENDIR | EXPLICIT_INVAL_DATA | INIT_EXT | PERFILE_DAX
+    out_opts: ASYNC_READ | BIG_WRITES | HAS_IOCTL_DIR | AUTO_INVAL_DATA | DO_READDIRPLUS | READDIRPLUS_AUTO | ASYNC_DIO | WRITEBACK_CACHE | ZERO_MESSAGE_OPEN | PARALLEL_DIROPS | MAX_PAGES | CACHE_SYMLINKS | ZERO_MESSAGE_OPENDIR | EXPLICIT_INVAL_DATA | PERFILE_DAX
+[2023-06-28T14:42:49Z INFO  image_rs::nydus::service] Fuse daemon started!
+[2023-06-28T14:42:49Z INFO  nydus_test::image] pull and unpack image "sha256:38f9e63e10bbd2226dc1fb51f407b90c69ee7e6d99ed56412882b39b3faf2da7", cid: "java_latest-test_nydus", with image-rs succeed. 
+[2023-06-28T14:42:49Z INFO  nydus_test] pulling nydus image eci-nydus-registry.cn-hangzhou.cr.aliyuncs.com/v6/java:latest-test_nydus cast 1.648042368s
+[2023-06-28T14:42:49Z DEBUG nydus_storage::backend::connection] cache-flusher Request: GET https://eci-nydus-registry.cn-hangzhou.cr.aliyuncs.com/v2/v6/java/blobs/sha256:3c7c373cf0e9d32c72863f4cd71319377a60a8df402f294212652aa3b4239142 headers: Some({"range": "bytes=61446765-61524006"}), proxy: false, data: false, duration: 139ms
+[2023-06-28T14:42:49Z DEBUG nydus_storage::backend::connection] cache-flusher Request: GET https://eci-nydus-registry.cn-hangzhou.cr.aliyuncs.com/v2/v6/java/blobs/sha256:a85bd3ca75118635fbde80cc392de126f40567502052d847f4ac376e83fa0d8d headers: Some({"range": "bytes=74-4185"}), proxy: false, data: false, duration: 141ms
+[2023-06-28T14:42:49Z DEBUG nydus_storage::backend::connection] cache-flusher Request: GET https://eci-nydus-registry.cn-hangzhou.cr.aliyuncs.com/v2/v6/java/blobs/sha256:659162891a9a8b329277525c5fd10720df3fc4b677de302bd756381a1a925181 headers: Some({"range": "bytes=69935023-70027680"}), proxy: false, data: false, duration: 154ms
+[2023-06-28T14:42:49Z DEBUG nydus_storage::backend::connection] cache-flusher Request: GET https://eci-nydus-registry.cn-hangzhou.cr.aliyuncs.com/v2/v6/java/blobs/sha256:d51dab2f65dfdf8c54dccf0411175fcf39c191555ab692b295ac55980780d115 headers: Some({"range": "bytes=698584-703871"}), proxy: false, data: false, duration: 149ms
+[2023-06-28T14:42:49Z DEBUG nydus_storage::backend::connection] cache-flusher Request: GET https://eci-nydus-registry.cn-hangzhou.cr.aliyuncs.com/v2/v6/java/blobs/sha256:c0d76b65d4ab37bab75c351c426258cdd24adef835738e4e23902f80b369670c headers: Some({"range": "bytes=308535-312676"}), proxy: false, data: false, duration: 142ms
+[2023-06-28T14:42:49Z DEBUG nydus_storage::backend::connection] cache-flusher Request: GET https://eci-nydus-registry.cn-hangzhou.cr.aliyuncs.com/v2/v6/java/blobs/sha256:e29eaaf85c1d7b9ca0c2a1a792811e79e5273d4196c0aec43ae845b1c4694b2a headers: Some({"range": "bytes=55-4166"}), proxy: false, data: false, duration: 155ms
+[2023-06-28T14:42:49Z DEBUG nydus_storage::backend::connection] cache-flusher Request: GET https://eci-nydus-registry.cn-hangzhou.cr.aliyuncs.com/v2/v6/java/blobs/sha256:6b99ea5ca11a447ed5c4fd55770abc45c4c476eac6d03ca38f865242ea33e210 headers: Some({"range": "bytes=170797662-170881647"}), proxy: false, data: false, duration: 160ms
+[2023-06-28T14:42:49Z DEBUG nydus_storage::backend::connection] cache-flusher Request: GET https://eci-nydus-registry.cn-hangzhou.cr.aliyuncs.com/v2/v6/java/blobs/sha256:1847a2a4648cc3ff2db56b19c7d28a3841bb2d2e68b8163802d5eea62d517f45 headers: Some({"range": "bytes=25117238-25130333"}), proxy: false, data: false, duration: 171ms
+[2023-06-28T14:42:49Z DEBUG nydus_storage::backend::connection] cache-flusher Request: GET https://dockerauth.cn-hangzhou.aliyuncs.com/auth headers: Some({}), proxy: false, data: true, duration: 122ms
+[2023-06-28T14:42:49Z DEBUG nydus_storage::backend::registry] cached bearer auth, next time: 1687963969
+[2023-06-28T14:42:49Z DEBUG nydus_storage::backend::connection] cache-flusher Request: GET https://dockerauth.cn-hangzhou.aliyuncs.com/auth headers: Some({}), proxy: false, data: true, duration: 114ms
+[2023-06-28T14:42:49Z DEBUG nydus_storage::backend::registry] cached bearer auth, next time: 1687963969
+[2023-06-28T14:42:49Z DEBUG nydus_storage::backend::connection] cache-flusher Request: GET https://dockerauth.cn-hangzhou.aliyuncs.com/auth headers: Some({}), proxy: false, data: true, duration: 145ms
+[2023-06-28T14:42:49Z DEBUG nydus_storage::backend::registry] cached bearer auth, next time: 1687963969
+[2023-06-28T14:42:49Z DEBUG nydus_storage::backend::connection] cache-flusher Request: GET https://dockerauth.cn-hangzhou.aliyuncs.com/auth headers: Some({}), proxy: false, data: true, duration: 146ms
+[2023-06-28T14:42:49Z DEBUG nydus_storage::backend::registry] cached bearer auth, next time: 1687963969
+[2023-06-28T14:42:49Z DEBUG nydus_storage::backend::connection] cache-flusher Request: GET https://dockerauth.cn-hangzhou.aliyuncs.com/auth headers: Some({}), proxy: false, data: true, duration: 159ms
+[2023-06-28T14:42:49Z DEBUG nydus_storage::backend::registry] cached bearer auth, next time: 1687963969
+[2023-06-28T14:42:49Z DEBUG nydus_storage::backend::connection] cache-flusher Request: GET https://dockerauth.cn-hangzhou.aliyuncs.com/auth headers: Some({}), proxy: false, data: true, duration: 141ms
+[2023-06-28T14:42:49Z DEBUG nydus_storage::backend::registry] cached bearer auth, next time: 1687963969
+[2023-06-28T14:42:49Z DEBUG nydus_storage::backend::connection] cache-flusher Request: GET https://dockerauth.cn-hangzhou.aliyuncs.com/auth headers: Some({}), proxy: false, data: true, duration: 164ms
+[2023-06-28T14:42:49Z DEBUG nydus_storage::backend::registry] cached bearer auth, next time: 1687963969
+[2023-06-28T14:42:49Z DEBUG nydus_storage::backend::connection] cache-flusher Request: GET https://dockerauth.cn-hangzhou.aliyuncs.com/auth headers: Some({}), proxy: false, data: true, duration: 148ms
+[2023-06-28T14:42:49Z DEBUG nydus_storage::backend::registry] cached bearer auth, next time: 1687963969
+[2023-06-28T14:42:49Z DEBUG nydus_storage::backend::connection] cache-flusher Request: GET https://eci-nydus-registry.cn-hangzhou.cr.aliyuncs.com/v2/v6/java/blobs/sha256:3c7c373cf0e9d32c72863f4cd71319377a60a8df402f294212652aa3b4239142 headers: Some({"range": "bytes=61446765-61524006"}), proxy: false, data: false, duration: 82ms
+[2023-06-28T14:42:49Z DEBUG nydus_storage::backend::connection] cache-flusher Request: GET https://eci-nydus-registry.cn-hangzhou.cr.aliyuncs.com/v2/v6/java/blobs/sha256:659162891a9a8b329277525c5fd10720df3fc4b677de302bd756381a1a925181 headers: Some({"range": "bytes=69935023-70027680"}), proxy: false, data: false, duration: 79ms
+[2023-06-28T14:42:49Z DEBUG nydus_storage::backend::connection] cache-flusher Request: GET https://eci-nydus-registry.cn-hangzhou.cr.aliyuncs.com/v2/v6/java/blobs/sha256:d51dab2f65dfdf8c54dccf0411175fcf39c191555ab692b295ac55980780d115 headers: Some({"range": "bytes=698584-703871"}), proxy: false, data: false, duration: 83ms
+[2023-06-28T14:42:49Z DEBUG nydus_storage::backend::connection] cache-flusher Request: GET https://eci-nydus-registry.cn-hangzhou.cr.aliyuncs.com/v2/v6/java/blobs/sha256:a85bd3ca75118635fbde80cc392de126f40567502052d847f4ac376e83fa0d8d headers: Some({"range": "bytes=74-4185"}), proxy: false, data: false, duration: 94ms
+[2023-06-28T14:42:49Z DEBUG nydus_storage::backend::connection] cache-flusher Request: GET https://eci-nydus-registry.cn-hangzhou.cr.aliyuncs.com/v2/v6/java/blobs/sha256:c0d76b65d4ab37bab75c351c426258cdd24adef835738e4e23902f80b369670c headers: Some({"range": "bytes=308535-312676"}), proxy: false, data: false, duration: 86ms
+[2023-06-28T14:42:49Z DEBUG nydus_storage::backend::connection] cache-flusher Request: GET https://eci-nydus-registry.cn-hangzhou.cr.aliyuncs.com/v2/v6/java/blobs/sha256:1847a2a4648cc3ff2db56b19c7d28a3841bb2d2e68b8163802d5eea62d517f45 headers: Some({"range": "bytes=25117238-25130333"}), proxy: false, data: false, duration: 102ms
+[2023-06-28T14:42:49Z DEBUG nydus_storage::backend::connection] cache-flusher Request: GET https://eci-nydus-registry.cn-hangzhou.cr.aliyuncs.com/v2/v6/java/blobs/sha256:e29eaaf85c1d7b9ca0c2a1a792811e79e5273d4196c0aec43ae845b1c4694b2a headers: Some({"range": "bytes=55-4166"}), proxy: false, data: false, duration: 120ms
+[2023-06-28T14:42:49Z DEBUG nydus_storage::backend::connection] cache-flusher Request: GET https://eci-nydus-registry.cn-hangzhou.cr.aliyuncs.com/v2/v6/java/blobs/sha256:6b99ea5ca11a447ed5c4fd55770abc45c4c476eac6d03ca38f865242ea33e210 headers: Some({"range": "bytes=170797662-170881647"}), proxy: false, data: false, duration: 145ms
+[2023-06-28T14:42:49Z DEBUG nydus_storage::backend::connection] cache-flusher Request: GET https://cri-ii22rrbpuj8owmje-registry.oss-cn-hangzhou.aliyuncs.com/docker%2Fregistry%2Fv2%2Fblobs%2Fsha256%2F3c%2F3c7c373cf0e9d32c72863f4cd71319377a60a8df402f294212652aa3b4239142%2Fdata?Expires=1687964568&OSSAccessKeyId=STS.NUHhhL3t4vVEqE1qJYRQkkncj&Signature=8Osgsw5LQ%2BoALhmnyrF9S5rKRsU%3D&security-token=CAISkQJ1q6Ft5B2yfSjIr5b9I9L43qsVwZSuc2OAlUoMXt5HhKvIiDz2IH9KfXdtBOAcsPo3m25W6foelrkqEcMfGRaYMZYpv8kLrl78O28uenVNtO5qsoasPETOITyZtZagToeUZdfZfejXGDKgvyRvwLz8WCy%2FVli%2BS%2FOggoJmadJlNWvRL0AxZrFsKxBltdUROFbIKP%2BpKWSKuGfLC1dysQcO4gEWq4bHm5fAsEaE0AGnk75I%2B9usf6LJNZc8YM1NNP6ux%2FFze6b71ypd1gNH7q8ejtYfpmme4IzAUwMPvU3ZbbSLroF1ZgZ9Z7knHaVDquT1lPt1oPbemIXs1wxcMexbWjnbWJqnxMbUtVZWrUSsl9wagAF5rdvYv3Zr2q9YKocDwVMM93anx3KzyOrcXtHZqjC8KgjUaVokQM6htBgqe2%2FNIs%2F6RZZS2P1UGZKm5tVm%2B%2B0vGTXmYnQB0p6Bce%2B72rdJKzdk1e5j1nDvImipWDJ3AWcNVs1k%2FGqQLcTvzVMeNPRsNYonfpTC%2B47DSPeN5bNo8g%3D%3D headers: Some({"range": "bytes=61446765-61524006"}), proxy: false, data: false, duration: 183ms
+[2023-06-28T14:42:49Z DEBUG nydus_storage::backend::connection] cache-flusher Request: GET https://cri-ii22rrbpuj8owmje-registry.oss-cn-hangzhou.aliyuncs.com/docker%2Fregistry%2Fv2%2Fblobs%2Fsha256%2Fd5%2Fd51dab2f65dfdf8c54dccf0411175fcf39c191555ab692b295ac55980780d115%2Fdata?Expires=1687964568&OSSAccessKeyId=STS.NUHhhL3t4vVEqE1qJYRQkkncj&Signature=nHV2rTEm104%2F0OfF8OWDr35huF0%3D&security-token=CAISkQJ1q6Ft5B2yfSjIr5b9I9L43qsVwZSuc2OAlUoMXt5HhKvIiDz2IH9KfXdtBOAcsPo3m25W6foelrkqEcMfGRaYMZYpv8kLrl78O28uenVNtO5qsoasPETOITyZtZagToeUZdfZfejXGDKgvyRvwLz8WCy%2FVli%2BS%2FOggoJmadJlNWvRL0AxZrFsKxBltdUROFbIKP%2BpKWSKuGfLC1dysQcO4gEWq4bHm5fAsEaE0AGnk75I%2B9usf6LJNZc8YM1NNP6ux%2FFze6b71ypd1gNH7q8ejtYfpmme4IzAUwMPvU3ZbbSLroF1ZgZ9Z7knHaVDquT1lPt1oPbemIXs1wxcMexbWjnbWJqnxMbUtVZWrUSsl9wagAF5rdvYv3Zr2q9YKocDwVMM93anx3KzyOrcXtHZqjC8KgjUaVokQM6htBgqe2%2FNIs%2F6RZZS2P1UGZKm5tVm%2B%2B0vGTXmYnQB0p6Bce%2B72rdJKzdk1e5j1nDvImipWDJ3AWcNVs1k%2FGqQLcTvzVMeNPRsNYonfpTC%2B47DSPeN5bNo8g%3D%3D headers: Some({"range": "bytes=698584-703871"}), proxy: false, data: false, duration: 156ms
+[2023-06-28T14:42:49Z DEBUG nydus_storage::backend::connection] cache-flusher Request: GET https://cri-ii22rrbpuj8owmje-registry.oss-cn-hangzhou.aliyuncs.com/docker%2Fregistry%2Fv2%2Fblobs%2Fsha256%2F65%2F659162891a9a8b329277525c5fd10720df3fc4b677de302bd756381a1a925181%2Fdata?Expires=1687964568&OSSAccessKeyId=STS.NTAb4WySqysKAaYBezK5bpAz1&Signature=5Lvf9yZMLtSkHYZVfkvr6jAvcfY%3D&security-token=CAISkQJ1q6Ft5B2yfSjIr5f0KY7jlIxQzrGgQ0fopmUvR7pOn4TR0zz2IH9KfXdtBOAcsPo3m25W6foelrkqEcMfGRaYMZYpv8kLrl78OyJBJnRNtO5qsoasPETOITyZtZagToeUZdfZfejXGDKgvyRvwLz8WCy%2FVli%2BS%2FOggoJmadJlNWvRL0AxZrFsKxBltdUROFbIKP%2BpKWSKuGfLC1dysQcO4gEWq4bHm5fAsEaE0AGnk75I%2B9usf6LJNZc8YM1NNP6ux%2FFze6b71ypd1gNH7q8ejtYfpmme4IzAUwMPvU3ZbbSLroF1ZgZ9Z7knHaVDquT1lPt1oPbemIXs1wxcMexbWjnbWJqnxMbUtVZWrUSsl9wagAGxKHmcta61yAe7lXTEQrG8bgaLETGyAOIpXoS68kAQfYM99WGdW7FuBk7SsWvqnf2lYRpN58CMh6%2Fif0s5iF9Cm3VSsMTSHadp2TROsi%2Fm%2Bm9zhS0VYBTDMpkgRfsHCP32OSysh5rafiJbxPZzkEJiwmg%2BSPfDChkJipsTmywtXQ%3D%3D headers: Some({"range": "bytes=69935023-70027680"}), proxy: false, data: false, duration: 202ms
+[2023-06-28T14:42:49Z DEBUG nydus_storage::backend::connection] cache-flusher Request: GET https://cri-ii22rrbpuj8owmje-registry.oss-cn-hangzhou.aliyuncs.com/docker%2Fregistry%2Fv2%2Fblobs%2Fsha256%2Fa8%2Fa85bd3ca75118635fbde80cc392de126f40567502052d847f4ac376e83fa0d8d%2Fdata?Expires=1687964568&OSSAccessKeyId=STS.NUHhhL3t4vVEqE1qJYRQkkncj&Signature=1NRvFTvSLBBcRnzAddqHsSUFtRM%3D&security-token=CAISkQJ1q6Ft5B2yfSjIr5b9I9L43qsVwZSuc2OAlUoMXt5HhKvIiDz2IH9KfXdtBOAcsPo3m25W6foelrkqEcMfGRaYMZYpv8kLrl78O28uenVNtO5qsoasPETOITyZtZagToeUZdfZfejXGDKgvyRvwLz8WCy%2FVli%2BS%2FOggoJmadJlNWvRL0AxZrFsKxBltdUROFbIKP%2BpKWSKuGfLC1dysQcO4gEWq4bHm5fAsEaE0AGnk75I%2B9usf6LJNZc8YM1NNP6ux%2FFze6b71ypd1gNH7q8ejtYfpmme4IzAUwMPvU3ZbbSLroF1ZgZ9Z7knHaVDquT1lPt1oPbemIXs1wxcMexbWjnbWJqnxMbUtVZWrUSsl9wagAF5rdvYv3Zr2q9YKocDwVMM93anx3KzyOrcXtHZqjC8KgjUaVokQM6htBgqe2%2FNIs%2F6RZZS2P1UGZKm5tVm%2B%2B0vGTXmYnQB0p6Bce%2B72rdJKzdk1e5j1nDvImipWDJ3AWcNVs1k%2FGqQLcTvzVMeNPRsNYonfpTC%2B47DSPeN5bNo8g%3D%3D headers: Some({"range": "bytes=74-4185"}), proxy: false, data: false, duration: 172ms
+[2023-06-28T14:42:49Z DEBUG nydus_storage::backend::connection] cache-flusher Request: GET https://cri-ii22rrbpuj8owmje-registry.oss-cn-hangzhou.aliyuncs.com/docker%2Fregistry%2Fv2%2Fblobs%2Fsha256%2Fe2%2Fe29eaaf85c1d7b9ca0c2a1a792811e79e5273d4196c0aec43ae845b1c4694b2a%2Fdata?Expires=1687964568&OSSAccessKeyId=STS.NTAb4WySqysKAaYBezK5bpAz1&Signature=cJWOKE2cwpV69HCJqSCILs9m1IE%3D&security-token=CAISkQJ1q6Ft5B2yfSjIr5f0KY7jlIxQzrGgQ0fopmUvR7pOn4TR0zz2IH9KfXdtBOAcsPo3m25W6foelrkqEcMfGRaYMZYpv8kLrl78OyJBJnRNtO5qsoasPETOITyZtZagToeUZdfZfejXGDKgvyRvwLz8WCy%2FVli%2BS%2FOggoJmadJlNWvRL0AxZrFsKxBltdUROFbIKP%2BpKWSKuGfLC1dysQcO4gEWq4bHm5fAsEaE0AGnk75I%2B9usf6LJNZc8YM1NNP6ux%2FFze6b71ypd1gNH7q8ejtYfpmme4IzAUwMPvU3ZbbSLroF1ZgZ9Z7knHaVDquT1lPt1oPbemIXs1wxcMexbWjnbWJqnxMbUtVZWrUSsl9wagAGxKHmcta61yAe7lXTEQrG8bgaLETGyAOIpXoS68kAQfYM99WGdW7FuBk7SsWvqnf2lYRpN58CMh6%2Fif0s5iF9Cm3VSsMTSHadp2TROsi%2Fm%2Bm9zhS0VYBTDMpkgRfsHCP32OSysh5rafiJbxPZzkEJiwmg%2BSPfDChkJipsTmywtXQ%3D%3D headers: Some({"range": "bytes=55-4166"}), proxy: false, data: false, duration: 149ms
+[2023-06-28T14:42:49Z DEBUG nydus_storage::backend::connection] cache-flusher Request: GET https://cri-ii22rrbpuj8owmje-registry.oss-cn-hangzhou.aliyuncs.com/docker%2Fregistry%2Fv2%2Fblobs%2Fsha256%2Fc0%2Fc0d76b65d4ab37bab75c351c426258cdd24adef835738e4e23902f80b369670c%2Fdata?Expires=1687964568&OSSAccessKeyId=STS.NTAb4WySqysKAaYBezK5bpAz1&Signature=t4S0X%2Fxg%2BIuaT7m9VJbqTXQ4EiA%3D&security-token=CAISkQJ1q6Ft5B2yfSjIr5f0KY7jlIxQzrGgQ0fopmUvR7pOn4TR0zz2IH9KfXdtBOAcsPo3m25W6foelrkqEcMfGRaYMZYpv8kLrl78OyJBJnRNtO5qsoasPETOITyZtZagToeUZdfZfejXGDKgvyRvwLz8WCy%2FVli%2BS%2FOggoJmadJlNWvRL0AxZrFsKxBltdUROFbIKP%2BpKWSKuGfLC1dysQcO4gEWq4bHm5fAsEaE0AGnk75I%2B9usf6LJNZc8YM1NNP6ux%2FFze6b71ypd1gNH7q8ejtYfpmme4IzAUwMPvU3ZbbSLroF1ZgZ9Z7knHaVDquT1lPt1oPbemIXs1wxcMexbWjnbWJqnxMbUtVZWrUSsl9wagAGxKHmcta61yAe7lXTEQrG8bgaLETGyAOIpXoS68kAQfYM99WGdW7FuBk7SsWvqnf2lYRpN58CMh6%2Fif0s5iF9Cm3VSsMTSHadp2TROsi%2Fm%2Bm9zhS0VYBTDMpkgRfsHCP32OSysh5rafiJbxPZzkEJiwmg%2BSPfDChkJipsTmywtXQ%3D%3D headers: Some({"range": "bytes=308535-312676"}), proxy: false, data: false, duration: 181ms
+[2023-06-28T14:42:49Z DEBUG nydus_storage::backend::connection] cache-flusher Request: GET https://cri-ii22rrbpuj8owmje-registry.oss-cn-hangzhou.aliyuncs.com/docker%2Fregistry%2Fv2%2Fblobs%2Fsha256%2F18%2F1847a2a4648cc3ff2db56b19c7d28a3841bb2d2e68b8163802d5eea62d517f45%2Fdata?Expires=1687964568&OSSAccessKeyId=STS.NTAb4WySqysKAaYBezK5bpAz1&Signature=W9G5kCnTcP4WAxbzkMPLP2GAAMk%3D&security-token=CAISkQJ1q6Ft5B2yfSjIr5f0KY7jlIxQzrGgQ0fopmUvR7pOn4TR0zz2IH9KfXdtBOAcsPo3m25W6foelrkqEcMfGRaYMZYpv8kLrl78OyJBJnRNtO5qsoasPETOITyZtZagToeUZdfZfejXGDKgvyRvwLz8WCy%2FVli%2BS%2FOggoJmadJlNWvRL0AxZrFsKxBltdUROFbIKP%2BpKWSKuGfLC1dysQcO4gEWq4bHm5fAsEaE0AGnk75I%2B9usf6LJNZc8YM1NNP6ux%2FFze6b71ypd1gNH7q8ejtYfpmme4IzAUwMPvU3ZbbSLroF1ZgZ9Z7knHaVDquT1lPt1oPbemIXs1wxcMexbWjnbWJqnxMbUtVZWrUSsl9wagAGxKHmcta61yAe7lXTEQrG8bgaLETGyAOIpXoS68kAQfYM99WGdW7FuBk7SsWvqnf2lYRpN58CMh6%2Fif0s5iF9Cm3VSsMTSHadp2TROsi%2Fm%2Bm9zhS0VYBTDMpkgRfsHCP32OSysh5rafiJbxPZzkEJiwmg%2BSPfDChkJipsTmywtXQ%3D%3D headers: Some({"range": "bytes=25117238-25130333"}), proxy: false, data: false, duration: 196ms
+[2023-06-28T14:42:49Z DEBUG nydus_storage::backend::connection] cache-flusher Request: GET https://cri-ii22rrbpuj8owmje-registry.oss-cn-hangzhou.aliyuncs.com/docker%2Fregistry%2Fv2%2Fblobs%2Fsha256%2F6b%2F6b99ea5ca11a447ed5c4fd55770abc45c4c476eac6d03ca38f865242ea33e210%2Fdata?Expires=1687964568&OSSAccessKeyId=STS.NUHhhL3t4vVEqE1qJYRQkkncj&Signature=zeEGK1jOgUfuSHksqLgCsxcFMXo%3D&security-token=CAISkQJ1q6Ft5B2yfSjIr5b9I9L43qsVwZSuc2OAlUoMXt5HhKvIiDz2IH9KfXdtBOAcsPo3m25W6foelrkqEcMfGRaYMZYpv8kLrl78O28uenVNtO5qsoasPETOITyZtZagToeUZdfZfejXGDKgvyRvwLz8WCy%2FVli%2BS%2FOggoJmadJlNWvRL0AxZrFsKxBltdUROFbIKP%2BpKWSKuGfLC1dysQcO4gEWq4bHm5fAsEaE0AGnk75I%2B9usf6LJNZc8YM1NNP6ux%2FFze6b71ypd1gNH7q8ejtYfpmme4IzAUwMPvU3ZbbSLroF1ZgZ9Z7knHaVDquT1lPt1oPbemIXs1wxcMexbWjnbWJqnxMbUtVZWrUSsl9wagAF5rdvYv3Zr2q9YKocDwVMM93anx3KzyOrcXtHZqjC8KgjUaVokQM6htBgqe2%2FNIs%2F6RZZS2P1UGZKm5tVm%2B%2B0vGTXmYnQB0p6Bce%2B72rdJKzdk1e5j1nDvImipWDJ3AWcNVs1k%2FGqQLcTvzVMeNPRsNYonfpTC%2B47DSPeN5bNo8g%3D%3D headers: Some({"range": "bytes=170797662-170881647"}), proxy: false, data: false, duration: 168ms

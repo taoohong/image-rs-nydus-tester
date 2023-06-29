@@ -1,0 +1,13 @@
+{
+    "work_dir": "/var/lib/image-rs",
+    "default_snapshot": "overlay",
+    "security_validate": false,
+    "auth": false,
+    "nydus": {
+        "type": "fscache",
+        "fscache": {
+            "fscache_threads": 4
+        }
+    }
+}
+
