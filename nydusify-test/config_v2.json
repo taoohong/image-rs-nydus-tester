@@ -1,0 +1,20 @@
+{
+            "device": {
+                "backend": {
+                    "type": "localfs",
+                    "config": {
+                        "dir": "/tmp/AM7TxD/blobs"
+                    }
+                },
+                "cache": {
+                    "type": "blobcache",
+                    "compressed": true,
+                    "config": {
+                        "work_dir": "/tmp/AM7TxD/cache"
+                    }
+                }
+            },
+            "mode": "cached",
+            "digest_validate": true,
+            "iostats_files": false
+}

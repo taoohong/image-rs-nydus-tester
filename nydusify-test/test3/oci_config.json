@@ -1,0 +1,111 @@
+{
+  "created": "2023-01-14T10:49:25.726395588Z",
+  "architecture": "amd64",
+  "os": "linux",
+  "config": {
+    "ExposedPorts": {
+      "80/tcp": {}
+    },
+    "Env": [
+      "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+    ],
+    "Entrypoint": [
+      "docker-entrypoint.sh"
+    ],
+    "Cmd": [
+      "nginx",
+      "-g",
+      "daemon off;"
+    ],
+    "WorkingDir": "/",
+    "Labels": {
+      "maintainer": "OpenAnolis Cloud Native SIG",
+      "org.opencontainers.image.created": "2022-08-29 20:11:58+0800",
+      "org.opencontainers.image.licenses": "Mulan PSL v2",
+      "org.opencontainers.image.title": "nginx",
+      "org.opencontainers.image.vendor": "Anolis OS",
+      "org.opencontainers.image.version": "1.14-8.6"
+    },
+    "StopSignal": "SIGTERM",
+    "ArgsEscaped": true
+  },
+  "rootfs": {
+    "type": "layers",
+    "diff_ids": [
+      "sha256:068524d0c0b6f8fb7ef7db2cd94241614e9af705383da4eac915c455a872e4a0",
+      "sha256:cf5a770a4ac4289dce39210c6b99ff0db4d7128b23636b391a14f9246ab249d2",
+      "sha256:f02628a454a18fc51b967ae6d59475331ac52c5051100ec92946ae5edef1f59e",
+      "sha256:f7921da1c8bd76ba1c3943e9ccea3607a136f687251899ddd8c210f7bb389c0a"
+    ]
+  },
+  "history": [
+    {
+      "created": "2022-08-26T09:48:51.115771412Z",
+      "created_by": "LABEL org.opencontainers.image.title=Anolis OS Base Image org.opencontainers.image.vendor=Anolis OS org.opencontainers.image.licenses=Mulan PSL v2 org.opencontainers.image.created=2022-08-29 20:11:58+0800 maintainer=OpenAnolis Cloud Native SIG",
+      "comment": "buildkit.dockerfile.v0",
+      "empty_layer": true
+    },
+    {
+      "created": "2022-08-26T09:48:51.115771412Z",
+      "created_by": "ARG TARGETARCH",
+      "comment": "buildkit.dockerfile.v0",
+      "empty_layer": true
+    },
+    {
+      "created": "2022-08-26T09:48:51.115771412Z",
+      "created_by": "ADD AnolisOS-rootfs-amd64.tar.xz / # buildkit",
+      "comment": "buildkit.dockerfile.v0"
+    },
+    {
+      "created": "2022-08-26T09:48:51.115771412Z",
+      "created_by": "CMD [\"/bin/bash\"]",
+      "comment": "buildkit.dockerfile.v0",
+      "empty_layer": true
+    },
+    {
+      "created": "2023-01-14T10:49:25.376518031Z",
+      "created_by": "LABEL maintainer=OpenAnolis Cloud Native SIG org.opencontainers.image.title=nginx org.opencontainers.image.version=1.14-8.6",
+      "comment": "buildkit.dockerfile.v0",
+      "empty_layer": true
+    },
+    {
+      "created": "2023-01-14T10:49:25.376518031Z",
+      "created_by": "RUN /bin/sh -c yum -y update;     yum -y install nginx;     yum clean all # buildkit",
+      "comment": "buildkit.dockerfile.v0"
+    },
+    {
+      "created": "2023-01-14T10:49:25.701430352Z",
+      "created_by": "RUN /bin/sh -c ln -sf /dev/stdout /var/log/nginx/access.log;     ln -sf /dev/stderr /var/log/nginx/error.log # buildkit",
+      "comment": "buildkit.dockerfile.v0"
+    },
+    {
+      "created": "2023-01-14T10:49:25.726395588Z",
+      "created_by": "COPY docker-entrypoint.sh /usr/local/bin/ # buildkit",
+      "comment": "buildkit.dockerfile.v0"
+    },
+    {
+      "created": "2023-01-14T10:49:25.726395588Z",
+      "created_by": "ENTRYPOINT [\"docker-entrypoint.sh\"]",
+      "comment": "buildkit.dockerfile.v0",
+      "empty_layer": true
+    },
+    {
+      "created": "2023-01-14T10:49:25.726395588Z",
+      "created_by": "EXPOSE map[80/tcp:{}]",
+      "comment": "buildkit.dockerfile.v0",
+      "empty_layer": true
+    },
+    {
+      "created": "2023-01-14T10:49:25.726395588Z",
+      "created_by": "STOPSIGNAL SIGTERM",
+      "comment": "buildkit.dockerfile.v0",
+      "empty_layer": true
+    },
+    {
+      "created": "2023-01-14T10:49:25.726395588Z",
+      "created_by": "CMD [\"nginx\" \"-g\" \"daemon off;\"]",
+      "comment": "buildkit.dockerfile.v0",
+      "empty_layer": true
+    }
+  ]
+}

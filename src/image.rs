@@ -14,6 +14,7 @@ const AA_KEYPROVIDER_URI: &str =
 const AA_GETRESOURCE_URI: &str =
     "unix:///run/confidential-containers/attestation-agent/getresource.sock";
 
+
 pub async fn image_pull(image: &str, cid: &str) -> Result<String> {
     let mut cid = cid.to_string();
 
@@ -74,8 +75,11 @@ pub async fn image_pull(image: &str, cid: &str) -> Result<String> {
 }
 
 pub async fn encrypted_image_pull(image: &str, cid: &str) -> Result<String> {
-    init_attestation_agent()?;
+    init_attestation_agent().map_err(|e| {
+        error!("failed to start attestation agent, {}", e);
+    });
     let aa_kbc_params = "cc_kbc::http://172.18.0.1:8080";
+    //let aa_kbc_params = "offline_fs_kbc::null";
     let decrypt_config = format!("provider:attestation-agent:{}", aa_kbc_params);
     env::set_var("OCICRYPT_KEYPROVIDER_CONFIG", OCICRYPT_CONFIG_PATH);
 
@@ -180,6 +184,7 @@ fn init_attestation_agent() -> Result<()> {
     config_file.write_all(ocicrypt_config.to_string().as_bytes())?;
 
     // The Attestation Agent will run for the duration of the guest.
+    // .env("AA_SAMPLE_ATTESTER_TEST", "1")
     Command::new(AA_PATH)
         .arg("--keyprovider_sock")
         .arg(AA_KEYPROVIDER_URI)

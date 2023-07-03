@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 2,
+  "mediaType": "application/vnd.docker.distribution.manifest.v2+json",
+  "config": {
+    "mediaType": "application/vnd.docker.container.image.v1+json",
+    "digest": "sha256:f52728b474503e1acd464fd6f7af38586b498ac71993fe07d9efc42e369d9d66",
+    "size": 3160
+  },
+  "layers": [
+    {
+      "mediaType": "application/vnd.oci.image.layer.nydus.blob.v1",
+      "digest": "sha256:3e8b05aaf87236565dcbcf1154dbb2106864cacf1b97db79d8d38a79eeee75c3",
+      "size": 81773992,
+      "annotations": {
+        "containerd.io/snapshot/nydus-blob": "true",
+        "containerd.io/snapshot/nydus-encrypted-blob": "true"
+      }
+    },
+    {
+      "mediaType": "application/vnd.oci.image.layer.nydus.blob.v1",
+      "digest": "sha256:d0b852cf3051d72093b53371411a5a5edc7c4195bb57d1da01ef7a8e342454a6",
+      "size": 129344740,
+      "annotations": {
+        "containerd.io/snapshot/nydus-blob": "true",
+        "containerd.io/snapshot/nydus-encrypted-blob": "true"
+      }
+    },
+    {
+      "mediaType": "application/vnd.oci.image.layer.nydus.blob.v1",
+      "digest": "sha256:82802de4cffac5225b5f8f37620489fd9d04f0d9693d7b4aa2ad1ee43ef1e73d",
+      "size": 7919,
+      "annotations": {
+        "containerd.io/snapshot/nydus-blob": "true",
+        "containerd.io/snapshot/nydus-encrypted-blob": "true"
+      }
+    },
+    {
+      "mediaType": "application/vnd.oci.image.layer.v1.tar+gzip+encrypted",
+      "digest": "sha256:5722d3f30025d30275c3e1038e12385d98dedd6e7bb29ba1d70665769cba81ab",
+      "size": 994887,
+      "annotations": {
+        "containerd.io/snapshot/nydus-bootstrap": "true",
+        "containerd.io/snapshot/nydus-fs-version": "6",
+        "org.opencontainers.image.enc.keys.jwe": "eyJwcm90ZWN0ZWQiOiJleUpoYkdjaU9pSlNVMEV0VDBGRlVDSXNJbVZ1WXlJNklrRXlOVFpIUTAwaWZRIiwiZW5jcnlwdGVkX2tleSI6IkczelZjbUlPLWJBRmxFanU3ZXZEQ1pOVGlVY2pBTUNjcUVZR2ZSM1Y2V3o0bUcxZnlyNEUwQmhqQ1ppQUt1d2JZS0VWZWt4YUR5SHp4RmtsX0d5VUt6ZjZuRmFwM0tiOWxXVklKS0VuQ3pQTFRUZFVKNkpCa0o3V2swY3RtcnNZam1CbTE0S054M3drZGdqUGYxZjBzSExIRGpWelRhOXgtWDBXV2hsV05vYVlWSEdEX0lKVUdNaVJCQUdZbWU5azJVWGZCN2t0SEdtcS1DaHBqRHlrODVTQlItVm5HTWRValQ1OUNKeE9BUGNzNUl1YmNNSjY3Z0VSazdTREdlSkFwQ3R0Qjd2bHl4ZUNCSTgxOWJoWUF3OXB3a2JlU2Jic19hbW11eG5KT0d2VVdQVnpta0NUbV9FQjI0U2Ytc0U0ZlZsLWpZMERFdDd1VENITC1MVGE3USIsIml2IjoiamVwRUsxU0R2VkpyRlQxbiIsImNpcGhlcnRleHQiOiJPZlQyeUlMUU5PMnJuRnZfVnc2OVZyb09DRGNWaUcxWG95NGpPNlNmM2I2LXlQZ0ZXT2lHMTBqNUE4bVZEU0FiaTJOQ0VITlhnU3RVaXA2c3RxcUkwNWx6aTJwVk9EZjBrS1YxT0w5ZlZoRVZubmdrODRwTzVKdkRadEV0UW9VdDgxcFRrdElSUThPTG1uYmtiUHpBQUJxbk1VcGJZNnVaVWNLX0Y0ZVIxVUN4dnc0enU1QlNjWXJrZWRYSEl1cUUwdEFvb0d0NG9FT3l5S2NnMHB0YWY0dzd5dzIzZWJmN0dJUWJFMHpqVDJmRVphdHh5NmNiU1dZUzJFZndYcnBpOXciLCJ0YWciOiJ1WGlwNkhFNlFvOFlhMlBYQy1Ec1J3In0=",
+        "org.opencontainers.image.enc.pubopts": "eyJjaXBoZXIiOiJBRVNfMjU2X0NUUl9ITUFDX1NIQTI1NiIsImhtYWMiOiJDaVBCV1hZT0k1aDBLMWJwd3hXNVJmbzBSOWlyZkx6VlIvc1o5bEI4Ykk4PSIsImNpcGhlcm9wdGlvbnMiOnt9fQ=="
+      }
+    }
+  ],
+  "subject": {
+    "mediaType": "application/vnd.docker.distribution.manifest.v2+json",
+    "digest": "sha256:76960bdd3ec631ba2fa0c1f0cd4b7e7f70a487e71e559bf81f5ea738000ff2fe",
+    "size": 1156,
+    "platform": {
+      "architecture": "amd64",
+      "os": "linux"
+    }
+  },
+  "annotations": {
+    "containerd.io/snapshot/nydus-builder-version": "v2.2.0-252-gfd15d859",
+    "containerd.io/snapshot/nydus-fs-version": "6",
+    "containerd.io/snapshot/nydus-source-digest": "sha256:55dcb729c46f2028126f2a57417712c4d77a947ecb409e445bf0c2e59d100640",
+    "containerd.io/snapshot/nydus-source-reference": "registry.openanolis.cn/openanolis/nginx:1.14.1-8.6"
+  }
+}

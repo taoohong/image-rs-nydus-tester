@@ -1,0 +1,24 @@
+
+{
+	"device": {
+		"backend": {
+			"type": "registry",
+			"config": {"scheme":"http","host":"localhost:5000","repo":"busybox"}
+		},
+		"cache": {
+			"type": "blobcache",
+			"config": {
+				"work_dir": "output/fs/nydus_blobs"
+			}
+		}
+	},
+	"mode": "direct",
+	"iostats_files": false,
+	"fs_prefetch": {
+		"enable": true,
+		"threads_count": 10,
+		"merging_size": 131072
+	},
+	"digest_validate": false,
+	"enable_xattr": true
+}

@@ -1,0 +1,19 @@
+{
+            "type": "bootstrap",
+            "id": "blob1",
+            "config": {
+                "id": "cache1",
+                "backend_type": "registry",
+                "backend_config": {
+			"scheme": "http",
+			"host": "localhost:5000",
+			"repo": "busybox"
+		},
+                "cache_type": "filecache",
+                "cache_config": {
+			"work_dir": "/tmp"	
+		},
+                "metadata_path": "contrib/nydusify/output/nydus_bootstrap"
+            },
+            "domain_id": "domain1"
+        }
